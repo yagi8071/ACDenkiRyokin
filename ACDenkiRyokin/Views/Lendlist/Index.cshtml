@@ -1,0 +1,106 @@
+﻿@model IEnumerable<ACDenkiRyokin.Models.denki_ryokin>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>ログイン名：○○事業部　○○様</h3>
+<br />
+
+<h3>変更情報検索</h3>
+
+@using (Html.BeginForm("Search", "Lendlist", FormMethod.Post))
+{
+    <div class="form-group row">
+
+        <div class="col-md-4">
+            管理ID
+            @Html.TextBox("ManagementID", null, new { @class = "form-control" })
+        </div>
+
+        <div class="col-md-4">
+            変更情報
+            @Html.TextBox("ChangeInfomation", null, new { @class = "form-control" })
+        </div>
+
+        <div class="col-md-4">
+            変更日
+            @Html.TextBox("Date", null, new { @class = "form-control" })
+        </div>
+
+        <div class="col-md-4">
+            変更者
+            @Html.TextBox("Applicant", null, new { @class = "form-control" })
+        </div>
+
+        <div class="col-md-4">
+            ステータス
+            @Html.TextBox("Status", null, new { @class = "form-control" })
+        </div>
+
+    </div>
+
+    <div>
+        <input type="submit" class="btn btn-primary btn-lg" value="検索" />
+    </div>
+
+
+    <div>
+        <input type="reset" class="btn btn-primary btn-lg" value="クリア" onclick="return" />
+    </div>
+}
+<br />
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ManagementID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ChangeInfomation)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Applicant)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Status)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ManagementID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChangeInfomation)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Applicant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ManagementID }) |
+                @Html.ActionLink("選択", "Details", new { id = item.ManagementID }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ManagementID })
+            </td>
+        </tr>
+    }
+
+</table>
+
+<br />
+<div>
+    <input type="button" class="btn btn-primary btn-lg" value="CSV出力" />
+</div>

@@ -1,0 +1,24 @@
+﻿@model ACDenkiRyokin.Models.AuthModel
+@{
+    ViewBag.Title = "電気料金支払いシステム　ログイン画面";
+}
+<h2>@ViewBag.Title</h2>
+
+@using (@Html.BeginForm())
+{
+    <div class="form-item">
+        @Html.LabelFor(model => model.Id)
+        @Html.TextBoxFor(model => model.Id)
+    </div>
+    <br />
+    <div class="form-item">
+        @Html.LabelFor(model => model.Password)
+        @Html.PasswordFor(model => model.Password)
+    </div>
+    <br />
+    <div class="button-panel">
+        <input type="submit" 　class="button" value="ログイン" />
+    </div>
+    <br />
+    <label style="color:#ff0000">@Html.ValidationSummary()</label>
+}
