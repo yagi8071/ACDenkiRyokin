@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using ACDenkiRyokin.Models;
@@ -159,6 +162,7 @@ namespace ACDenkiRyokin.Controllers
             return View("Index", changeorders.ToList());
         }
 
+
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -167,5 +171,26 @@ namespace ACDenkiRyokin.Controllers
             }
             base.Dispose(disposing);
         }
+
+        public ActionResult CsvDownload(string download)
+        {
+            // CSVダウンロードボタンが押された際の処理
+            if (download == "download")
+            {
+                // ユーザーリストを作成
+                var TableList = new List<denki_ryokin>();
+                // CSV内容の生成
+                var csvString = CsvService.CreateCsv(TableList);
+                var fileName = DateTime.Now.ToString("yyyyMMdd") + "_ユーザーリスト.csv";
+
+                // Fileメソッドでダウンロードするために文字列をbyteデータに変換
+                var csvData = Encoding.UTF8.GetBytes(csvString);
+
+                // CSVファイルをダウンロード
+                return File(csvData, "text/csv", fileName);
+            }
+            return View();
+        }
+
     }
 }
