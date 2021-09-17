@@ -172,16 +172,17 @@ namespace ACDenkiRyokin.Controllers
             base.Dispose(disposing);
         }
 
+        // CSVファイル出力コントローラー
         public ActionResult CsvDownload(string download)
         {
             // CSVダウンロードボタンが押された際の処理
             if (download == "download")
             {
                 // ユーザーリストを作成
-                var TableList = new List<denki_ryokin>();
+                var TableList = db.denki_ryokin.ToList();
                 // CSV内容の生成
                 var csvString = CsvService.CreateCsv(TableList);
-                var fileName = DateTime.Now.ToString("yyyyMMdd") + "_ユーザーリスト.csv";
+                var fileName = DateTime.Now.ToString("yyyyMMddhhmmss") + "_変更情報リスト.csv";
 
                 // Fileメソッドでダウンロードするために文字列をbyteデータに変換
                 var csvData = Encoding.UTF8.GetBytes(csvString);

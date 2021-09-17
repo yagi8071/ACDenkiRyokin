@@ -103,7 +103,7 @@
 
 <br />
 
-@using (Html.BeginForm("CsvDownload", "Lendllist", FormMethod.Post))
+@using (Html.BeginForm("CsvDownload", "Lendlist", FormMethod.Get))
 {
-    <button class="btn btn-primary btn-lg" value="download" name="download" type="submit">CSV出力</button>
+    <button class="btn btn-primary" value="download" name="download" type="submit">CSV出力</button>
 }
