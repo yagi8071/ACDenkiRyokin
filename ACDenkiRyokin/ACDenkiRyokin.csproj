@@ -55,6 +55,7 @@
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Runtime.Serialization" />
@@ -138,6 +139,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AuthModel.cs" />
+    <Compile Include="Models\CsvService.cs" />
     <Compile Include="Models\db_denkiryokin.Context.cs" />
     <Compile Include="Models\db_denkiryokin.Context2.cs">
       <AutoGen>True</AutoGen>
@@ -175,6 +177,7 @@
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_denkiryokin2.cs</LastGenOutput>
     </Content>
+    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
@@ -292,20 +295,12 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Auth\Login.cshtml" />
     <Content Include="Views\Lendlist\Create.cshtml" />
     <Content Include="Views\Lendlist\Delete.cshtml" />
     <Content Include="Views\Lendlist\Details.cshtml" />
     <Content Include="Views\Lendlist\Edit.cshtml" />
     <Content Include="Views\Lendlist\Index.cshtml" />
-    <Content Include="Views\AuthModels\Create.cshtml" />
-    <Content Include="Views\AuthModels\Delete.cshtml" />
-    <Content Include="Views\AuthModels\Details.cshtml" />
-    <Content Include="Views\AuthModels\Edit.cshtml" />
-    <Content Include="Views\AuthModels\Index.cshtml" />
     <Content Include="Scripts\umd\popper.min.js.map" />
     <Content Include="Scripts\umd\popper.js.map" />
     <Content Include="Scripts\umd\popper.js.flow" />

@@ -40,14 +40,12 @@
 
     </div>
 
+    
     <div>
-        <input type="submit" class="btn btn-primary btn-lg" value="検索" />
+        <input type="submit" class="btn btn-primary btn-lg h3" value="検索" />
+        <input type="reset" class="btn btn-primary btn-lg h3" value="クリア" />
     </div>
 
-
-    <div>
-            <input type="reset" class="btn btn-primary btn-lg" value="クリア" />
-    </div>
 }
 <br />
 
@@ -91,9 +89,7 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ManagementID }) |
-                @Html.ActionLink("選択", "Details", new { id = item.ManagementID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ManagementID })
+                    @Html.ActionLink("選択", "Details", new { id = item.ManagementID })
             </td>
         </tr>
     }
@@ -105,5 +101,5 @@
 
 @using (Html.BeginForm("CsvDownload", "Lendlist", FormMethod.Get))
 {
-    <button class="btn btn-primary" value="download" name="download" type="submit">CSV出力</button>
+    <button class="btn btn-primary btn-lg" value="download" name="download" type="submit">CSV出力</button>
 }

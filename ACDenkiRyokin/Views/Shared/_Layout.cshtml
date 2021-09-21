@@ -22,9 +22,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("ホーム", "Index", "Home")</li>
-                    <li>@Html.ActionLink("登録情報(仮)", "Index", "Lendlist")</li>
-                    <li>@Html.ActionLink("問い合わせ", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("ホーム", "Index", "Lendlist")</li>
                 </ul>
                 @if (Request.IsAuthenticated)
                 {
