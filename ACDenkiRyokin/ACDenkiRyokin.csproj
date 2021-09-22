@@ -141,11 +141,6 @@
     <Compile Include="Models\AuthModel.cs" />
     <Compile Include="Models\CsvService.cs" />
     <Compile Include="Models\db_denkiryokin.Context.cs" />
-    <Compile Include="Models\db_denkiryokin.Context2.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>db_denkiryokin.Context.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\db_denkiryokin2.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -169,15 +164,10 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
-    <Content Include="Models\db_denkiryokin.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>db_denkiryokin.Context2.cs</LastGenOutput>
-    </Content>
     <Content Include="Models\db_denkiryokin.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>db_denkiryokin2.cs</LastGenOutput>
     </Content>
-    <Content Include="Scripts\app.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\esm\popper-utils.js" />
