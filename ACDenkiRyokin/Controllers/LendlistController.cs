@@ -178,7 +178,7 @@ namespace ACDenkiRyokin.Controllers
             // CSVダウンロードボタンが押された際の処理
             if (download == "download")
             {
-                // ユーザーリストを作成
+                // リストを作成
                 var TableList = db.denki_ryokin.ToList();
                 // CSV内容の生成
                 var csvString = CsvService.CreateCsv(TableList);

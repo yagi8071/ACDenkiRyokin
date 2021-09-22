@@ -27,6 +27,5 @@ namespace ACDenkiRyokin.Models
     
         public virtual DbSet<denki_ryokin> denki_ryokin { get; set; }
 
-        public System.Data.Entity.DbSet<ACDenkiRyokin.Models.AuthModel> AuthModels { get; set; }
     }
 }
