@@ -40,7 +40,7 @@
 
     </div>
 
-    
+    ///クリアボタンの動作に問題あり
     <div>
         <input type="submit" class="btn btn-primary btn-lg h3" value="検索" />
         <input type="reset" class="btn btn-primary btn-lg h3" value="クリア" />
@@ -89,7 +89,7 @@
                 @Html.DisplayFor(modelItem => item.Status)
             </td>
             <td>
-                    @Html.ActionLink("選択", "Details", new { id = item.ManagementID })
+                @Html.ActionLink("選択", "Details", new { id = item.ManagementID })
             </td>
         </tr>
     }
